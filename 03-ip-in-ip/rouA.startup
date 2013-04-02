@@ -1,0 +1,9 @@
+ifconfig eth0 10.0.1.1/24
+ifconfig eth1 10.0.100.1/24
+
+# default gateway is router B
+route add default gw 10.0.100.2
+
+# IP-in-IP tunnel
+#ifconfig tunl0 10.0.1.1 pointopoint 10.0.100.2
+#route add -net 10.0.2.0 netmask 255.255.255.0 dev tunl0

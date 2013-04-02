@@ -1,0 +1,11 @@
+ifconfig eth0 10.0.2.1/24
+ifconfig eth1 10.0.100.2/24
+
+# default gw
+route add default gw 10.0.100.1
+
+# GRE tunnel
+ip tunnel add tun0 mode gre remote 10.0.100.1 local 10.0.100.2 ttl 255
+ip link set tun0 up
+ip addr add 10.0.2.1 dev tun0
+ip route add 10.0.1.0/24 dev tun0

@@ -1,0 +1,9 @@
+ifconfig eth0 10.0.2.1/24
+ifconfig eth1 10.0.100.2/24
+
+# default gw
+route add default gw 10.0.100.1
+
+# tunnel setup
+#ifconfig tunl0 10.0.2.1 pointopoint 10.0.100.1
+#route add -net 10.0.1.0 netmask 255.255.255.0 dev tunl0
