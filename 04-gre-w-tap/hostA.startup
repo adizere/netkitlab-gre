@@ -1,0 +1,4 @@
+ifconfig eth0 10.0.1.100/24
+
+# rouA eth0 is our default GW
+route add default gw 10.0.1.1
